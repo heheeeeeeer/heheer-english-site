@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赫赫儿的英语角 - 开始学习</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* 隐藏滚动条但保留滚动功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .heheer-logo {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            color: #ec4899;
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: rgba(236, 72, 153, 0.1);
+            border-radius: 0.5rem;
+        }
+        .paper {
+            background: #fffdfa;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            border: 1px solid #f4e3ea;
+        }
+        .paper-dash {
+            border-top: 2px dashed #f8c6d8;
+        }
+        .tape {
+            position: relative;
+        }
+        .tape::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 16px;
+            width: 64px;
+            height: 18px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--tape-strong, rgba(236, 72, 153, 0.18)),
+                var(--tape-strong, rgba(236, 72, 153, 0.18)) 6px,
+                var(--tape-light, rgba(236, 72, 153, 0.12)) 6px,
+                var(--tape-light, rgba(236, 72, 153, 0.12)) 12px
+            );
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .tilt-1 { transform: rotate(-0.3deg); }
+        .tilt-2 { transform: rotate(0.4deg); }
+        
+        .washi-tab {
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            background: rgba(236, 72, 153, 0.08);
+            border: 1px dashed #f5c5d5;
+            color: #a855f7;
+        }
+        .washi-tab-active {
+            background: rgba(236, 72, 153, 0.18);
+            color: #ec4899;
+            border-color: #ec8db3;
+            box-shadow: 0 2px 8px rgba(236,72,153,0.25);
+        }
+        .chip-sticker {
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            border: 1px dashed #f5c5d5;
+            background: rgba(236, 72, 153, 0.12);
+            color: #ec4899;
+            font-size: 12px;
+        }
+        .section-title {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .orb { position: fixed; width: 240px; height: 240px; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 0; }
+        .orb.pink { background: radial-gradient(circle at center, rgba(236,72,153,0.28), transparent 60%); }
+        .orb.blue { background: radial-gradient(circle at center, rgba(59,130,246,0.25), transparent 60%); }
+        .sparkle { position: fixed; font-size: 22px; pointer-events: none; animation: sparkleFly 1500ms ease-out forwards; }
+        @keyframes sparkleFly { 
+          0% { transform: translate(0,0) scale(1); opacity: 1;}
+          100% { transform: translate(var(--dx), var(--dy)) scale(0.8); opacity: 0;}
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800">
+
+    <!-- 导航栏 (与主页保持一致) -->
+    <nav class="w-full px-6 py-4 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div class="w-8 h-8 rounded-full border border-pink-300 overflow-hidden bg-pink-100 flex items-center justify-center">
+                <img src="avatar.png" alt="头像" class="w-full h-full object-cover">
+            </div>
+            <span class="font-bold text-lg text-pink-600 hidden sm:block">赫赫儿_</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <div class="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 shadow-inner w-[260px]">
+                <input id="searchInput" type="text" placeholder="可以在这里搜索哦！" class="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400">
+            </div>
+            <a href="index.html" class="p-2 rounded-lg hover:bg-pink-50 transition-colors" title="回到主页">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#ec4899" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M3 10.5l9-7 9 7"></path>
+                  <path d="M5 10v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9"></path>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main class="relative max-w-6xl mx-auto px-4 pt-0 pb-8">
+        <div id="orbs">
+            <div class="orb pink" style="top:120px;left:10%"></div>
+            <div class="orb blue" style="bottom:100px;right:12%"></div>
+        </div>
+        
+        <!-- 顶部控制区：大类与小类合并为同一框 -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+            <div class="bg-white p-4 rounded-2xl shadow-sm w-full">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex gap-2 flex-wrap" id="categoryTabs"></div>
+                    <div class="flex items-center gap-2">
+                        <button id="randomModeBtn" class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm" title="随机模式">
+                            <span class="text-blue-500">🎲</span>
+                            <span class="text-sm font-medium hidden sm:inline">随机模式</span>
+                        </button>
+                        <button id="toggleVisibilityBtn" class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-600 hover:bg-pink-50 hover:text-pink-600 hover:border-pink-200 transition-all shadow-sm" title="隐藏/显示英语句子">
+                        <span id="eyeIcon" class="text-pink-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="#ec4899" stroke-width="2" viewBox="0 0 24 24">
+                              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </span>
+                        <span class="text-sm font-medium hidden sm:inline">背诵模式</span>
+                    </button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mt-4">
+                    <div class="flex flex-wrap gap-3 flex-1" id="tagList"></div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- 内容展示区 -->
+        <div id="contentGrid" class="grid grid-cols-1 gap-5">
+            <!-- 由 JS 生成卡片 -->
+        </div>
+
+        <!-- 空状态提示 -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <div class="inline-block p-4 bg-gray-100 rounded-full mb-4">
+                <i data-lucide="inbox" class="w-8 h-8 text-gray-400"></i>
+            </div>
+            <p class="text-gray-500">没有找到相关内容哦</p>
+        </div>
+
+    </main>
+
+    <!-- 学习页不显示底部小蛋糕动画，仅首页保留 -->
+
+    
+
+    <!-- 引入数据和逻辑脚本 -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // 鼠标互动背景
+        const orbs = Array.from(document.querySelectorAll('.orb'));
+        let mx = window.innerWidth/2, my = window.innerHeight/2;
+        let ox = mx, oy = my;
+        function animate() {
+            ox += (mx - ox) * 0.08;
+            oy += (my - oy) * 0.08;
+            orbs.forEach((orb, i) => {
+                const dx = (i === 0 ? -120 : 120);
+                const dy = (i === 0 ? -80 : 80);
+                orb.style.transform = `translate(${ox + dx}px, ${oy + dy}px)`;
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+        window.addEventListener('mousemove', (e) => {
+            mx = e.clientX;
+            my = e.clientY;
+        });
+        // 双击 ✨ 效果
+        window.addEventListener('dblclick', (e) => {
+            for (let i = 0; i < 14; i++) {
+                const s = document.createElement('span');
+                s.className = 'sparkle';
+                s.textContent = '✨';
+                const dx = (Math.random()*80 - 40) + 'px';
+                const dy = (Math.random()*50 - 25) + 'px';
+                s.style.left = e.clientX + 'px';
+                s.style.top = e.clientY + 'px';
+                s.style.setProperty('--dx', dx);
+                s.style.setProperty('--dy', dy);
+                document.body.appendChild(s);
+                setTimeout(() => s.remove(), 1600);
+            }
+        });
+    </script>
+</body>
+</html>
