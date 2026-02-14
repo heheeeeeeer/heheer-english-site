@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赫赫儿的英语角 - 开始学习</title>
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>赫赫儿的英语角 - 随机模式</title>
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -103,22 +103,28 @@
 
     <!-- 导航栏 (与主页保持一致) -->
     <nav class="w-full px-6 py-4 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
-        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <a href="../index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div class="w-8 h-8 rounded-full border border-pink-300 overflow-hidden bg-pink-100 flex items-center justify-center">
-                <img src="avatar.png" alt="头像" class="w-full h-full object-cover">
+                <img src="../avatar.png" alt="头像" class="w-full h-full object-cover">
             </div>
             <span class="font-bold text-lg text-pink-600 hidden sm:block">赫赫儿_</span>
         </a>
+        <div id="donationPopover" class="absolute top-[50px] left-1/2 -translate-x-1/2 paper rounded-xl p-6 w-80 shadow-2xl hidden opacity-0 transition-all duration-300 z-[60] flex flex-col items-center justify-center min-h-[180px]">
+            <div class="absolute top-3 right-3">
+                 <button onclick="toggleDonationModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                 </button>
+            </div>
+            <h2 class="text-base text-pink-600 mb-2 mt-4">⦁ ᎑ - 本网站是完全免费的哦~</h2>
+            <div class="text-center space-y-1 text-gray-600 text-sm">
+                <p>嘿！你发现我啦！</p>
+                <p>欢迎来视频评论区找我玩儿！</p>
+            </div>
+        </div>
         <div class="flex items-center gap-3">
             <div class="flex items-center bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 shadow-inner w-[260px]">
                 <input id="searchInput" type="text" placeholder="可以在这里搜索哦！" class="flex-1 bg-transparent outline-none text-gray-700 placeholder-gray-400">
             </div>
-            <a href="index.html" class="p-2 rounded-lg hover:bg-pink-50 transition-colors" title="回到主页">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#ec4899" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M3 10.5l9-7 9 7"></path>
-                  <path d="M5 10v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9"></path>
-                </svg>
-            </a>
         </div>
     </nav>
 
@@ -177,9 +183,16 @@
     
 
     <!-- 引入数据和逻辑脚本 -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="../data.js"></script>
+    <script src="../script.js"></script>
     <script>
+        // 强制进入随机模式
+        isRandomMode = true;
+        initRandomQueue();
+        pickNextRandom();
+        renderCategories();
+        renderCards();
+
         // 鼠标互动背景
         const orbs = Array.from(document.querySelectorAll('.orb'));
         let mx = window.innerWidth/2, my = window.innerHeight/2;
