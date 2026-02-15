@@ -948,12 +948,6 @@ const learningData = [
         image: "key"
       },
       {
-        english: "Love conquers all.",
-        chinese: "爱无不胜",
-        tags: ["爱", "哲理"],
-        image: "love"
-      },
-      {
         english: "Sunbeams filtered through the gloomy window, demonstrating that even small gestures can generate a profound blessing, fortifying the roof of love, which shelters every lonely soul.",
         chinese: "爱之微光",
         tags: ["爱", "阳光", "祝福"],
@@ -1066,6 +1060,12 @@ const learningData = [
         chinese: "爱跨越鸿沟",
         tags: ["爱", "希望", "跨越"],
         image: "love_bridge"
+      },
+      {
+        english: "Where love resides, no obstacle remains invincible.",
+        chinese: "爱无不胜",
+        tags: ["爱", "哲理"],
+        image: "love"
       }
     ]
   }
