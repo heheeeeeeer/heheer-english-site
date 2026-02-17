@@ -16,7 +16,7 @@ const learningData = [
       },
       {
         english: "He clenched his fists tightly.",
-        chinese: "握紧拳头",
+        chinese: "拳头攥紧",
         tags: ["手", "愤怒", "决心"],
         image: "clenched_fists"
       },
@@ -79,6 +79,12 @@ const learningData = [
         chinese: "迅速偷瞄",
         tags: ["眼", "偷瞄"],
         image: "peek"
+      },
+      {
+        english: "She cast a glance at the clock ticking on the wall.",
+        chinese: "迅速一瞥",
+        tags: ["脸", "表情", "一瞥"],
+        image: "quick_glance"
       },
       {
         english: "He gazed at her with emotional eyes reflecting profound gratitude.",
@@ -337,12 +343,6 @@ const learningData = [
         chinese: "笑容凝固",
         tags: ["脸", "表情", "僵硬"],
         image: "frozen_smile"
-      },
-      {
-        english: "She cast a glance at the clock ticking on the wall.",
-        chinese: "迅速一瞥",
-        tags: ["脸", "表情", "一瞥"],
-        image: "quick_glance"
       },
       {
         english: "Their eyes met, and a silent understanding passed between them.",
