@@ -33,13 +33,13 @@ const learningData = [
         image: "scenes"
       },
       {
-        english: "Sinking into a trance with my eyes downcast.",
+        english: "Sinking into a trance with my eyes downcast, I...",
         chinese: "陷入恍惚",
         tags: ["脑", "恍惚", "低垂"],
         image: "trance"
       },
       {
-        english: "He was totally intoxicated in the aromatic fragrance and the rosy illusions of mom's radiant smile when she received the rose.",
+        english: "He was totally intoxicated in the aromatic fragrance and the rosy illusions of mom's radiant smile upon receiving the rose.",
         chinese: "美好幻想",
         tags: ["脑", "幻想"],
         image: "illusion"
@@ -83,7 +83,7 @@ const learningData = [
       {
         english: "She cast a glance at the clock ticking on the wall.",
         chinese: "迅速一瞥",
-        tags: ["脸", "表情", "一瞥"],
+        tags: ["眼", "一瞥"],
         image: "quick_glance"
       },
       {
@@ -229,6 +229,24 @@ const learningData = [
         chinese: "唯闻心跳",
         tags: ["心跳", "寂静"],
         image: "pounding_heart"
+      },
+      {
+        english: "My heart seemed to skip a beat, and then raced on with a frantic rhythm.",
+        chinese: "心跳漏拍",
+        tags: ["心跳", "紧张", "慌乱"],
+        image: "heart_skip_beat"
+      },
+      {
+        english: "Crouching in the darkness, everything was still, except my heart drumming against my chest like thunder.",
+        chinese: "心跳如雷",
+        tags: ["心跳", "寂静", "黑暗"],
+        image: "heart_thunder"
+      },
+      {
+        english: "Upon hearing his name, his heart leaped into his throat, his palms instantly sweating.",
+        chinese: "心到嗓子眼",
+        tags: ["心跳", "紧张", "冒汗"],
+        image: "heart_leaped_throat"
       },
       {
         english: "Upon arrival, I made a dash for the wastebasket, stooped down and fumbled for something desperately.",
@@ -624,6 +642,18 @@ const learningData = [
         chinese: "鼓起勇气",
         tags: ["勇气", "黑暗"],
         image: "rekindled_courage"
+      },
+      {
+        english: "A sudden spark of bravery ignited within her, dispelling the freezing cold of fear that had gripped her heart.",
+        chinese: "勇气迸发",
+        tags: ["勇气", "恐惧"],
+        image: "spark_of_bravery"
+      },
+      {
+        english: "Summoning every ounce of courage left in his body, he forced his trembling legs to move forward.",
+        chinese: "咬牙前行",
+        tags: ["勇气", "颤抖"],
+        image: "trembling_forward"
       },
       {
         english: "It seemed as if I was the only one excluded from the festive delight and the convivial atmosphere.",
