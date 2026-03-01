@@ -139,7 +139,18 @@ function renderTags() {
         
         btn.className = `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
         btn.textContent = sec.label;
-        if (isActive) {
+        if (sec.key === '动物') {
+            btn.style.borderColor = '#EF92A0';
+            btn.style.backgroundColor = isActive ? '#EF92A0' : '#ffe0f2ff';
+            btn.style.color = isActive ? '#fff' : '#EF92A0';
+            if (isActive) {
+                btn.style.boxShadow = `0 2px 8px rgba(236, 86, 106, 0.25)`;
+                btn.style.fontWeight = '700';
+            } else {
+                btn.style.boxShadow = 'none';
+                btn.style.fontWeight = '500';
+            }
+        } else if (isActive) {
             btn.style.borderColor = theme.hex;
             btn.style.backgroundColor = theme.hex;
             btn.style.color = '#fff';
@@ -203,7 +214,7 @@ function renderCards() {
                     <span class="heheer-logo">H</span>
                     <h3 class="text-base font-bold text-gray-800">${currentRandom.chinese}</h3>
                     <div class="flex gap-1 flex-wrap">
-                        ${currentRandom.tags.map(tag => `<span class="text-[11px] px-2 py-1 rounded-full border" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
+                        ${currentRandom.tags.filter(tag => tag !== '动物').map(tag => `<span class="tag text-[11px] px-2 py-1 rounded-full border" data-tag="${tag}" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
                     </div>
                 </div>
                 <div class="flex items-center">
@@ -307,7 +318,7 @@ function renderCards() {
                                     <span class="heheer-logo">H</span>
                                 <h3 class="text-base font-bold text-gray-800">${highlightText(item.chinese, searchQuery)}</h3>
                                 <div class="flex gap-1 flex-wrap">
-                                    ${item.tags.map(tag => `<span class="text-[11px] px-2 py-1 rounded-full border" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
+                                    ${item.tags.filter(tag => tag !== '动物').map(tag => `<span class="tag text-[11px] px-2 py-1 rounded-full border" data-tag="${tag}" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -420,7 +431,7 @@ function renderCards() {
                         <span class="heheer-logo">H</span>
                         <h3 class="text-base font-bold text-gray-800">${item.chinese}</h3>
                         <div class="flex gap-1 flex-wrap">
-                            ${item.tags.map(tag => `<span class="text-[11px] px-2 py-1 rounded-full border" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
+                            ${item.tags.filter(tag => tag !== '动物').map(tag => `<span class="tag text-[11px] px-2 py-1 rounded-full border" data-tag="${tag}" style="background:${theme.rgbaLight};border-color:${theme.hex};color:${theme.hex}">${tag}</span>`).join('')}
                         </div>
                     </div>
                     <div class="flex items-center">
@@ -586,6 +597,7 @@ function getSectionDefs(cat) {
             {key:'手', label:'手（拥抱、推、摸）', tags:['手','手指','拥抱','抚摸','举手','推门','捂嘴']},
             {key:'心', label:'心（跳动）', tags:['心跳']},
             {key:'脚', label:'脚（跑、走、冲、停）', tags:['走','冲','脚步','下床','前进']},
+            {key:'动物', label:'动物', tags:['动物']},
         ];
     }
     if (cat === '情绪') {

@@ -373,9 +373,100 @@ const learningData = [
         chinese: "尖叫划破",
         tags: ["耳朵", "刺耳", "尖叫"],
         image: "piercing_scream"
+      },
+      {
+        english: "Sensing my sadness, the dog rested its chin heavily on my knee, looking up with soulful eyes.",
+        chinese: "小狗蹭膝盖",
+        tags: ["狗", "蹭", "悲伤", "动物"],
+        image: "dog_chin_knee"
+      },
+      {
+        english: "The puppy nuzzled against my palm, its wet nose cool and comforting.",
+        chinese: "小狗拱掌",
+        tags: ["小狗", "拱", "鼻子", "动物"],
+        image: "puppy_nuzzle_palm"
+      },
+      {
+        english: "Ears perked up, it tilted its head to the side, as if trying to understand my words.",
+        chinese: "歪头听",
+        tags: ["耳朵", "倾听", "动物"],
+        image: "ears_perked_up"
+      },
+      {
+        english: "A low, guttural growl rumbled in its throat, vibrating through the freezing air.",
+        chinese: "低吼震颤",
+        tags: ["吼叫", "震颤", "动物"],
+        image: "guttural_growl"
+      },
+      {
+        english: "It wagged its tail so vigorously that its whole body seemed to wiggle with joy.",
+        chinese: "开心摇尾",
+        tags: ["摇尾", "喜悦", "动物"],
+        image: "wagging_tail"
+      },
+      {
+        english: "It arched its back in a lazy stretch, then curled into a furry ball on my lap, purring like a tiny engine.",
+        chinese: "小猫咕噜",
+        tags: ["伸展", "蜷缩", "猫", "动物"],
+        image: "cat_stretch_curl"
+      },
+      {
+        english: "With agility and grace, it leaped onto the fence, its emerald eyes glowing in the twilight.",
+        chinese: "跃上围栏",
+        tags: ["跳跃", "敏捷", "动物"],
+        image: "leaped_on_fence"
+      },
+      {
+        english: "With its mane streaming in the wind, the horse galloped across the field, hooves thundering against the earth.",
+        chinese: "骏马奔腾",
+        tags: ["马", "奔跑", "鬃毛", "动物"],
+        image: "horse_gallop"
+      },
+      {
+        english: "It nudged my shoulder gently with its velvet nose, blowing warm breath onto my face.",
+        chinese: "鼻触肩头",
+        tags: ["触碰", "鼻子", "动物"],
+        image: "nudged_shoulder"
+      },
+      {
+        english: "Regaining its strength, it soared into the azure sky.",
+        chinese: "振翅高飞",
+        tags: ["飞翔", "力量", "动物"],
+        image: "soared_into_sky"
+      },
+      {
+        english: "Lumbering out of the shadows, the massive bear sniffed the air, its heavy paws leaving deep imprints in the snow.",
+        chinese: "大熊爪印",
+        tags: ["熊", "嗅探", "笨重", "动物"],
+        image: "bear_sniff_air"
+      },
+      {
+        english: "A pair of glowing green eyes pierced through the darkness, followed by a low, menacing growl.",
+        chinese: "低沉咆哮",
+        tags: ["眼睛", "黑暗", "吼叫", "动物"],
+        image: "glowing_green_eyes"
+      },
+      {
+        english: "Silhouetted against the full moon, the wolf threw back its head and let out a haunting howl.",
+        chinese: "狼嚎叫",
+        tags: ["狼", "嚎叫", "月夜", "动物"],
+        image: "wolf_howl"
+      },
+      {
+        english: "It paced back and forth in the cage, radiating an aura of suppressed power and wild majesty.",
+        chinese: "笼中踱步",
+        tags: ["踱步", "力量", "动物"],
+        image: "paced_in_cage"
+      },
+      {
+        english: "The cow grazed lazily in the meadow, occasionally flicking its tail to swat away flies, the very picture of tranquility.",
+        chinese: "惬意吃草",
+        tags: ["牛", "吃草", "平静", "动物"],
+        image: "cow_grazed_meadow"
       }
     ]
   },
+
   {
     category: "情绪",
     items: [
